@@ -46,11 +46,11 @@ public class Main {
             boolean result = true;
             System.out.println(competitor.getType() + " выходит на старт!");
             for (Obstacle obstacle : obstaclesPath) {
-                if (obstacle  instanceof Wall) result = competitor.jump(obstacle);
+                if (obstacle instanceof Wall) result = competitor.jump(obstacle);
                 else result = competitor.run(obstacle);
                 if (!result) break;
             }
-            if (result) System.out.println(competitor.getType()+" успешно прошел полосу препятствий!");
+            if (result) System.out.println(competitor.getType() + " успешно прошел полосу препятствий!");
             else System.out.println("В этот раз не вышло :(");
             System.out.println();
         }
