@@ -46,7 +46,7 @@ public class Main {
             boolean result = true;
             System.out.println(competitor.getType() + " выходит на старт!");
             for (Obstacle obstacle : obstaclesPath) {
-                if (obstacle.getType().equals("Стена")) result = competitor.jump(obstacle);
+                if (obstacle  instanceof Wall) result = competitor.jump(obstacle);
                 else result = competitor.run(obstacle);
                 if (!result) break;
             }
