@@ -1,15 +1,22 @@
 package marathon;
 
+import marathon.competitors.Competitor;
 import marathon.obstacles.Obstacle;
 
-public class Course {
+class Course {
     private Obstacle[] course;
 
-    public Course(Obstacle... obstacle) {
-        course = new Obstacle[obstacle.length];
+    Course(Obstacle... obstacle) {
+        course = obstacle;
+    }
 
-        for (int i = 0; i < obstacle.length; i++) {
-            course[i] = obstacle[i];
+    void doIt(Team team) {
+        for (Competitor competitor : team.getCompetitors()) {
+            for (Obstacle obstacle : course) {
+                obstacle.doIt(competitor);
+                if (!competitor.isOnDistance()) break;
+            }
+            System.out.println();
         }
     }
 }

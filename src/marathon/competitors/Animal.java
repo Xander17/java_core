@@ -1,21 +1,21 @@
 package marathon.competitors;
 
 public class Animal implements Competitor {
-    String type;
-    String name;
+    private String type;
+    private String name;
 
-    int maxRunDistance;
-    int maxJumpHeight;
-    int maxSwimDistance;
+    private int maxRunDistance;
+    private int maxJumpHeight;
+    private int maxSwimDistance;
 
-    boolean onDistance;
+    private boolean onDistance;
 
     @Override
     public boolean isOnDistance() {
         return onDistance;
     }
 
-    public Animal(String type, String name, int maxRunDistance, int maxJumpHeight, int maxSwimDistance) {
+    Animal(String type, String name, int maxRunDistance, int maxJumpHeight, int maxSwimDistance) {
         this.type = type;
         this.name = name;
         this.maxRunDistance = maxRunDistance;
@@ -61,6 +61,7 @@ public class Animal implements Competitor {
 
     @Override
     public void info() {
-        System.out.println(type + " " + name + " - " + onDistance);
+        String onDistanceString = onDistance ? "на дистанции" : "сошел с дистанции";
+        System.out.println(type + " " + name + " - " + onDistanceString);
     }
 }

@@ -1,17 +1,17 @@
 package marathon.competitors;
 
 public class Human implements Competitor {
-    String name;
+    private String name;
 
-    int maxRunDistance;
-    int maxJumpHeight;
-    int maxSwimDistance;
+    private int maxRunDistance;
+    private int maxJumpHeight;
+    private int maxSwimDistance;
 
-    boolean active;
+    private boolean onDistance;
 
     @Override
     public boolean isOnDistance() {
-        return active;
+        return onDistance;
     }
 
     public Human(String name) {
@@ -19,7 +19,7 @@ public class Human implements Competitor {
         this.maxRunDistance = 5000;
         this.maxJumpHeight = 30;
         this.maxSwimDistance = 200;
-        this.active = true;
+        this.onDistance = true;
     }
 
     @Override
@@ -28,7 +28,7 @@ public class Human implements Competitor {
             System.out.println(name + " хорошо справился с кроссом");
         } else {
             System.out.println(name + " не справился с кроссом");
-            active = false;
+            onDistance = false;
         }
     }
 
@@ -38,7 +38,7 @@ public class Human implements Competitor {
             System.out.println(name + " удачно перепрыгнул через стену");
         } else {
             System.out.println(name + " не смог перепрыгнуть стену");
-            active = false;
+            onDistance = false;
         }
     }
 
@@ -48,12 +48,13 @@ public class Human implements Competitor {
             System.out.println(name + " отлично проплыл");
         } else {
             System.out.println(name + " не смог проплыть");
-            active = false;
+            onDistance = false;
         }
     }
 
     @Override
     public void info() {
-        System.out.println(name + " - " + active);
+        String onDistanceString = onDistance ? "на дистанции" : "сошел с дистанции";
+        System.out.println(name + " - " + onDistanceString);
     }
 }

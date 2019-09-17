@@ -3,7 +3,7 @@ package marathon.obstacles;
 import marathon.competitors.Competitor;
 
 public class Cross extends Obstacle {
-    int length;
+    private int length;
 
     public Cross(int length) {
         this.length = length;

@@ -3,7 +3,7 @@ package marathon.obstacles;
 import marathon.competitors.Competitor;
 
 public class Wall extends Obstacle {
-    int height;
+    private int height;
 
     public Wall(int height) {
         this.height = height;
