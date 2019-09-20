@@ -9,8 +9,8 @@ public enum DaysOfWeekEnhanced {
     SATURDAY("Суббота", 0),
     SUNDAY("Воскресенье", 0);
 
-    int workHours;
-    String name;
+    private int workHours;
+    private String name;
 
     DaysOfWeekEnhanced(String name, int workHours) {
         this.name = name;
