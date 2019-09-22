@@ -6,7 +6,7 @@ import exceptions.dayofweek.*;
 public class Main {
     public static void main(String[] args) {
         String[][] stringArray = {
-                {"1", "2", "3", "4ss"},
+                {"1", "2", "3", "4"},
                 {"1", "2", "3", "4"},
                 {"1", "2", "3", "4"},
                 {"1", "2", "3", "4"},
@@ -29,4 +29,3 @@ public class Main {
         }
     }
 }
-
