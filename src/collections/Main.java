@@ -6,8 +6,15 @@ import collections.uniqwords.UniqWords;
 
 public class Main {
     public static void main(String[] args) {
-        Phonebook phonebook = new Phonebook();
+        testPhonebook();
+        System.out.println();
+        testPwdValidation();
+        System.out.println();
+        getUniqArray();
+    }
 
+    private static void testPhonebook() {
+        Phonebook phonebook = new Phonebook();
         String[][] testPhoneArray = {
                 {"Иванов", "+79990000000"}, {"Петров", "+79991111111"}, {"Сидоров", "+79992222222"},
                 {"Кузнецов", "+79993333333"}, {"Медведев", "+79994444444"}, {"Иванов", "+79995555555"},
@@ -18,21 +25,25 @@ public class Main {
 
         System.out.println("Иванов:");
         phonebook.get("ИвАнОв");
+    }
 
-        System.out.println();
+    private static void testPwdValidation() {
         String[] testPassArray = {
                 "qwerty", "qwerty123", "qw12NM", "qwe123RTY", "123",
                 "123dfgfff#$%f", "123dfgffSDFf#$%$#%fF333FG", "ываЫВА5ыПЫк333"};
+
         for (String s : testPassArray)
             System.out.println("Пароль " + s + " - " + PasswordValidator.isValid(s));
+    }
 
-        System.out.println();
+    private static void getUniqArray() {
         String[] testStringArray = {
                 "Яблоко", "Груша", "Апельсин", "Груша", "Слива",
                 "Арбуз", "Яблоко", "Дыня", "Вишня", "Слива",
                 "Груша", "Клубника", "Яблоко", "Смородина", "Груша",
                 "Груша", "Апельсин", "Груша", "Вишня", "Слива"
         };
+
         UniqWords.analizeArray(testStringArray);
     }
 }
