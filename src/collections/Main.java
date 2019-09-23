@@ -30,7 +30,7 @@ public class Main {
     private static void testPwdValidation() {
         String[] testPassArray = {
                 "qwerty", "qwerty123", "qw12NM", "qwe123RTY", "123",
-                "123dfgfff#$%f", "123dfgffSDFf#$%$#%fF333FG", "ываЫВА5ыПЫк333"};
+                "123dfgfff#$%f", "123dfgffSDFf#$%$#%fF333FG", "ываЫВА5ыПЫк333","sdf SDFSD234234"};
 
         for (String s : testPassArray)
             System.out.println("Пароль " + s + " - " + PasswordValidator.isValid(s));
