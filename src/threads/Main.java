@@ -85,6 +85,6 @@ public class Main {
     }
 
     private static float getExpression(float x, int y) {
-        return (float) (x * Math.sin(0.2f + y * 1f / 5) * Math.cos(0.2f + y * 1f / 5) * Math.cos(0.4f + y * 1f / 2));
+        return (float) (x * Math.sin(0.2f + y / 5) * Math.cos(0.2f + y / 5) * Math.cos(0.4f + y / 2));
     }
 }
