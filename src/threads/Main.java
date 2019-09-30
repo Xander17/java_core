@@ -72,16 +72,19 @@ public class Main {
     }
 
     private static void recalculateArray(float[] arr) {
-        for (int i = 0; i < arr.length; i++) {
-            arr[i] = (float) (arr[i] * Math.sin(0.2f + i * 1f / 5) * Math.cos(0.2f + i * 1f / 5) * Math.cos(0.4f + i * 1f / 2));
-        }
+        for (int i = 0; i < arr.length; i++)
+            arr[i] = getExpression(arr[i], i);
     }
 
     private static void recalculateArray(float[] arr, int subNum) {
         int startPoint = getSubArrayStartPoint(subNum);
         for (int i = 0; i < arr.length; i++) {
             int newI = startPoint + i;
-            arr[i] = (float) (arr[i] * Math.sin(0.2f + newI * 1f / 5) * Math.cos(0.2f + newI * 1f / 5) * Math.cos(0.4f + newI * 1f / 2));
+            arr[i] = getExpression(arr[i], newI);
         }
+    }
+
+    private static float getExpression(float x, int y) {
+        return (float) (x * Math.sin(0.2f + y * 1f / 5) * Math.cos(0.2f + y * 1f / 5) * Math.cos(0.4f + y * 1f / 2));
     }
 }
